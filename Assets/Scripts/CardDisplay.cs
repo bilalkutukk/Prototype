@@ -11,8 +11,13 @@ public class CardDisplay : MonoBehaviour
 
     public void LoadCard(CardData data)
     {
-        cardData = data;
-        artworkImage.sprite = data.artwork;
-        nameText.text = data.cardName;
+         cardData = data;
+
+        // Make sure data is valid
+        if (artworkImage != null && data.artwork != null)
+            artworkImage.sprite = data.artwork;
+
+        if (nameText != null)
+            nameText.text = data.cardName;
     }
 }

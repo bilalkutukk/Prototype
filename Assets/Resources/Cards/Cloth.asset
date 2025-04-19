@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 91627114f5c0cb14daf6f4bad5bd6801, type: 3}
-  m_Name: PotionCard
+  m_Name: Cloth
   m_EditorClassIdentifier: 
-  cardName: Potion
-  artwork: {fileID: -5547768843037689371, guid: e34200778f56aaf4097537bb840d7947, type: 3}
+  cardName: Cloth
+  artwork: {fileID: 2693601702578292975, guid: b25f9fcaa77ceba45b0b5111b7fc66a2, type: 3}
   value: 1
