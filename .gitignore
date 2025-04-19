@@ -1,0 +1,33 @@
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+MemoryCaptures/
+
+# Visual Studio / JetBrains
+.vscode/
+*.csproj
+*.sln
+*.user
+*.unityproj
+*.pidb
+.idea/
+*.suo
+*.userprefs
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Crash/Analytics
+*.stacktrace
+
+# Auto-generated
+*.apk
+*.aab
+*.xcworkspace/
+*.xcodeproj/
+*.plist
+*.gradle
