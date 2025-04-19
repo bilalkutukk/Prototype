@@ -13,16 +13,7 @@ public GameObject cardPrefab;
 
     void Start()
     {
-        CardData aCard = Resources.Load<CardData>("Cards/PotionCard");
-        CardData bCard = Resources.Load<CardData>("Cards/PotionCard");
 
-        marketCards.Add(aCard);
-        marketCards.Add(bCard);
-
-        playerCards.Add(aCard);
-
-        SpawnCards(marketCards, marketArea);
-        SpawnCards(playerCards, playerHand);
     }
 
     void SpawnCards(List<CardData> cards, Transform parent)

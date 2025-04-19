@@ -4,12 +4,13 @@ public class GameManager : MonoBehaviour
 {
     public DeckManager deckManager;
     public MarketManager marketManager;
-    public MarketView marketView;
+
+    public PlayerManager playerManager;
 
     void Start()
     {
         deckManager.InitializeDeck();
-        marketManager.FillMarket(deckManager);
-        marketView.ShowMarketCards(marketManager.marketCards);
+        marketManager.InitializeMarket(deckManager);
+        playerManager.InitializePlayer(deckManager); // Initialize player with the deck
     }
 }
