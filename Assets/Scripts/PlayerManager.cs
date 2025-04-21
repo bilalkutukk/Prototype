@@ -6,16 +6,20 @@ public class PlayerManager : MonoBehaviour
 {
     public GameObject cardPrefab; // Prefab for the card display
     public Transform playerHandRect; // UI container for the cards
-    public float spacing = 50f; // Space between cards
-    public float startX = -500f; // Starting position for the first card
-    public List<CardData> playerCards = new List<CardData>(); 
+    private float spacing = 250f; // Space between cards
+    private float startX = -500f; // Starting position for the first card
+    public List<CardData> playerCards = new List<CardData>();
 
+    private float cardSizeY = 300f;
+    private float cardSizeX = 200f;
+
+    private float borderWidth = 100f;
     internal void InitializePlayer(DeckManager deckManager)
     {
         // Initialize player with the deck manager
-        for (int i = 0; i < playerCards.Count; i++)
+        for (int i = 0; i < 3; i++)
         {
-           AddCard(playerCards[i]); // Add existing cards to the player hand display
+           AddCard(deckManager.DrawCard()); // Add existing cards to the player hand display
         }
     }
 
@@ -47,14 +51,11 @@ public class PlayerManager : MonoBehaviour
         if (playerCards.Count < 7) // Assuming a max hand size of 7
         {
             playerCards.Add(card);
+            setRectSize(); // Update the size of the player hand rect
             GameObject cardGO = Instantiate(cardPrefab, playerHandRect);
-            RectTransform rt = cardGO.GetComponent<RectTransform>();
-            rt.localScale = Vector3.one; // Reset scale to 1
-            
-            rt.anchoredPosition = new Vector2(startX + (playerCards.Count - 1) * spacing, 0);
-
             CardDisplay display = cardGO.GetComponent<CardDisplay>();
             display.LoadCard(card);
+            placeCards(); // Place the cards in the hand
         }
     }
 
@@ -68,5 +69,27 @@ public class PlayerManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void setRectSize() {
+        RectTransform rt = playerHandRect.GetComponent<RectTransform>();
+        rt.sizeDelta = new Vector2(cardSizeX * playerCards.Count + 50 * (playerCards.Count - 1) + borderWidth, cardSizeY);
+        
+        Debug.Log("RectTransform size x: " + rt.sizeDelta.x);
+
+        startX = -(rt.sizeDelta.x / 2) + 50 + cardSizeX / 2; 
+
+        Debug.Log("StartX: " + startX);
+    }
+
+    private void placeCards() {
+        int i = 0;
+        foreach (Transform child in playerHandRect)
+        {
+            RectTransform rt = child.GetComponent<RectTransform>();
+            rt.localScale = Vector3.one; // Reset scale to 1
+            rt.anchoredPosition = new Vector2(startX + (i++ * spacing), 0);
+            Debug.Log("Card position: " + rt.anchoredPosition.x);
+        }
     }
 }
