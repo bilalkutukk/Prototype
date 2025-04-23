@@ -19,7 +19,6 @@ public class DeckManager : MonoBehaviour
                 deck.Add(allCardTypes[i]);
             }
         }
-
         Shuffle(deck);
     }
 

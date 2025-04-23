@@ -11,8 +11,13 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         deckManager.InitializeDeck();
-        marketManager.InitializeMarket(deckManager);
-        playerManager.InitializePlayer(deckManager); // Initialize player with the deck
+        marketManager.InitializeMarket();
+        playerManager.InitializePlayer(); // Initialize player with the deck
         opponentManager.InitializeOpponent(); // Initialize opponent manager
     }
+
+    void Update()
+    {
+        
+    } 
 }

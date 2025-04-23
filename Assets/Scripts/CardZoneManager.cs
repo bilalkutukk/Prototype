@@ -13,8 +13,14 @@ public class CardZoneManager : MonoBehaviour
     private float startX = 0f; // Starting position for the first card
     public float cardSizeY = 300f; // Height of the card
     public float cardSizeX = 200f; // Width of the card
-    public virtual void Initialize() {
+    public virtual void Initialize(int noOfCards) {
         cards.Clear();
+         for (int i = 0; i < noOfCards; i++)
+        {
+            AddCard();
+        }
+        setCardZoneRectSize(); // Update the size of the opponent hand rect
+        placeCards(); // Place the cards in the hand
     }
     public virtual void AddCard() {
         cards.Add(deckManager.DrawCard());
@@ -52,13 +58,13 @@ public class CardZoneManager : MonoBehaviour
         }
     }
 
-    public virtual void InstantiateCard(CardData card) {
+    private void InstantiateCard(CardData card) {
         GameObject cardGO = Instantiate(cardPrefab, cardZoneRect);
         CardDisplay display = cardGO.GetComponent<CardDisplay>();
         display.LoadCard(card);
     }
 
-    public List<CardData> GetCards() {
+    public List<CardData> GetHand() {
         return new List<CardData>(cards);
     }    
 }
