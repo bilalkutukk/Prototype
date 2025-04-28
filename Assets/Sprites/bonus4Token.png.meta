@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c78efe7e617878949943e8693124bba9
+guid: 1865287ebc9dee84ea27baa9957828b6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4180342405278228797
-    second: cards4_0
+      213: 5007441912428608332
+    second: bonus4Token_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cards4_0
+      name: bonus4Token_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 890
-        height: 1254
+        width: 152
+        height: 136
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3ce93e51bb07cf5c0800000000000000
-      internalID: -4180342405278228797
+      spriteID: c4bb5b783e10e7540800000000000000
+      internalID: 5007441912428608332
       vertices: []
       indices: 
       edges: []

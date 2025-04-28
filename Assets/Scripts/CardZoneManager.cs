@@ -11,8 +11,8 @@ public class CardZoneManager : MonoBehaviour
 
     private float spacing = 50f; // Space between cards
     private float startX = 0f; // Starting position for the first card
-    public float cardSizeY = 300f; // Height of the card
-    public float cardSizeX = 200f; // Width of the card
+    private float cardSizeY = 150f; // Height of the card
+    private float cardSizeX = 100f; // Width of the card
     public virtual void Initialize(int noOfCards) {
         cards.Clear();
          for (int i = 0; i < noOfCards; i++)
