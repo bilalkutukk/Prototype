@@ -53,6 +53,7 @@ public class CardZoneManager : MonoBehaviour
         foreach (Transform child in cardZoneRect) 
         {
             RectTransform rt = child.GetComponent<RectTransform>();
+            cards[i].cardRect = rt; // Update the card's rect transform reference
             rt.localScale = Vector3.one; // Reset scale to 1 IS IT N
             rt.anchoredPosition = new Vector2(startX + (i++ *(spacing + cardSizeX)), 0);
         }

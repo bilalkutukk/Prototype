@@ -6,4 +6,6 @@ public class CardData : ScriptableObject
     public string cardName;
     public Sprite artwork;
     public int value;
+
+    public RectTransform cardRect; // Reference to the card's transform in the UI
 }
