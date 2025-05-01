@@ -9,10 +9,10 @@ public class CardZoneManager : MonoBehaviour
     public Transform cardZoneRect; // UI container for the cards
     public DeckManager deckManager;
 
-    private float spacing = 50f; // Space between cards
-    private float startX = 0f; // Starting position for the first card
-    private float cardSizeY = 150f; // Height of the card
-    private float cardSizeX = 100f; // Width of the card
+    private float _spacing = 50f; // Space between cards
+    private float _startX = 0f; // Starting position for the first card
+    private float _cardSizeY = 150f; // Height of the card
+    private float _cardSizeX = 100f; // Width of the card
     public virtual void Initialize(int noOfCards) {
         cards.Clear();
          for (int i = 0; i < noOfCards; i++)
@@ -27,35 +27,27 @@ public class CardZoneManager : MonoBehaviour
         cards.Add(newCard);
         InstantiateCard(cards[cards.Count - 1]);
     }
-    public virtual void RemoveCard(CardData card) {
-        cards.Remove(card);
-    }
-    public virtual void Clear() {
-        cards.Clear();
-    }
-
     public virtual void setCardZoneRectSize() {
         RectTransform rt = cardZoneRect.GetComponent<RectTransform>();
         if (cards.Count == 0)
         {
             rt.sizeDelta = new Vector2(0, 0);
-            startX = 0;
+            _startX = 0;
             return;
         }
         else 
         {
-            rt.sizeDelta = new Vector2(cardSizeX * cards.Count + spacing * (cards.Count - 1) + spacing * 2, cardSizeY);
-            startX = -(rt.sizeDelta.x / 2) + spacing + cardSizeX / 2;  
+            rt.sizeDelta = new Vector2(_cardSizeX * cards.Count + _spacing * (cards.Count - 1) + _spacing * 2, _cardSizeY);
+            _startX = -(rt.sizeDelta.x / 2) + _spacing + _cardSizeX / 2;  
         }
     }
-
     public virtual void placeCards() {
 
         for (int i = 0; i < cards.Count; i++)
         {
             RectTransform rt = cards[i].cardRect;
             rt.localScale = Vector3.one;
-            rt.anchoredPosition = new Vector2(startX + (i *(spacing + cardSizeX)), 0);
+            rt.anchoredPosition = new Vector2(_startX + (i *(_spacing + _cardSizeX)), 0);
             Debug.Log($"Card is placed at x: {rt.anchoredPosition.x}");
         }
     }
@@ -70,11 +62,4 @@ public class CardZoneManager : MonoBehaviour
         CardDisplay display = cardGO.GetComponent<CardDisplay>();
         display.LoadCard(card);
     }
-
-    public List<CardData> GetHand() {
-        return new List<CardData>(cards);
-    }
-    void Update()
-    {
-    } 
 }
