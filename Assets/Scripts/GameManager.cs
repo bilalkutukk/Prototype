@@ -6,7 +6,9 @@ public class GameManager : MonoBehaviour
     public MarketManager marketManager;
 
     public PlayerManager playerManager;
-    public OpponentManager opponentManager; // Assuming you have an OpponentManager
+    public OpponentManager opponentManager;
+
+    public TokenManager tokenManager; // Reference to the TokenManager
 
     void Start()
     {
@@ -14,6 +16,7 @@ public class GameManager : MonoBehaviour
         playerManager.InitializePlayer(); // Initialize player with the deck
         opponentManager.InitializeOpponent(); // Initialize opponent manager
         marketManager.InitializeMarket();
+        tokenManager.Initialize(); // Initialize the token manager
     }
 
     void Update()

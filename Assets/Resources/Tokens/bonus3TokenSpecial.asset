@@ -12,6 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1692b18f5c67e6943976cf41bcbdb0ff, type: 3}
   m_Name: bonus3TokenSpecial
   m_EditorClassIdentifier: 
-  tokenName: bonus3
+  tokenName: bonus3Special
+  tokenPointText:
+  - 
+  - 
+  - 
+  - 
   artwork: {fileID: -1264725529468954315, guid: 308c0a6cb44e7224fad4fc8c08d05cb3, type: 3}
   value: 0
+  tokenRect: {fileID: 0}
+  instanceGO: {fileID: 0}

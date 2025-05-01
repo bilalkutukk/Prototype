@@ -1,9 +1,5 @@
-using System;
 using UnityEngine;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using DG.Tweening;
-using UnityEditor.Animations;
 
 public class PlayerManager : CardZoneManager
 {

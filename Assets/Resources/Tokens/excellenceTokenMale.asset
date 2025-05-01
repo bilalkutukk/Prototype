@@ -12,6 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1692b18f5c67e6943976cf41bcbdb0ff, type: 3}
   m_Name: excellenceTokenMale
   m_EditorClassIdentifier: 
-  tokenName: 
+  tokenName: excellenceMale
+  tokenPointText:
+  - 
+  - 
+  - 
+  - 
   artwork: {fileID: 0}
   value: 0
+  tokenRect: {fileID: 0}
+  instanceGO: {fileID: 0}

@@ -195,7 +195,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5287debb5c4b7004ebeaa78f9e44e567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allCardTypes:
+  tokenPrefab: {fileID: 3245696505889035605, guid: e77d7a265899e624584ed7e5db18567d, type: 3}
+  tokenZone: {fileID: 2091240674}
+  allTokenTypes:
   - {fileID: 11400000, guid: 32cb7f90ae3cb6741b3994ff6ab53326, type: 2}
   - {fileID: 11400000, guid: 40f04374f308a2f44b1acf8f2ed778fd, type: 2}
   - {fileID: 11400000, guid: 2e43f8ed50a82b84a8a97869e9c22ef5, type: 2}
@@ -203,13 +205,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 17491f47efd717345a77be02d0fed49a, type: 2}
   - {fileID: 11400000, guid: 33ebd00c74a5ef54f8cf458f1e39bf6a, type: 2}
   - {fileID: 11400000, guid: 1e9a72b10c0d07c4399df62405e04b3d, type: 2}
-  - {fileID: 11400000, guid: ae4584018a2ac7b458b65028cacc1410, type: 2}
   - {fileID: 11400000, guid: 9d211acac2070ca419c0544f1556e256, type: 2}
+  - {fileID: 11400000, guid: ae4584018a2ac7b458b65028cacc1410, type: 2}
   - {fileID: 11400000, guid: fb6351d360685a64f89ab9435ba835bf, type: 2}
   - {fileID: 11400000, guid: d273faf14bab04d48af342eba832548a, type: 2}
   - {fileID: 11400000, guid: 3e9d2c45a5beddc4890623075f6b6605, type: 2}
   - {fileID: 11400000, guid: a4cf81e93cb780d479b681ebef21da5f, type: 2}
-  cardQuantities: 05000000050000000500000007000000070000000800000001000000040000000600000006000000060000000100000001000000
+  tokenQuantities: 05000000050000000500000007000000070000000900000001000000060000000300000006000000060000000100000001000000
 --- !u!4 &234241208
 Transform:
   m_ObjectHideFlags: 0
@@ -1165,7 +1167,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 250, y: -550}
+  m_AnchoredPosition: {x: 250, y: -541}
   m_SizeDelta: {x: 800, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &688358309
@@ -1823,6 +1825,7 @@ MonoBehaviour:
   marketManager: {fileID: 115249800}
   playerManager: {fileID: 1702312542}
   opponentManager: {fileID: 1841632265}
+  tokenManager: {fileID: 234241207}
 --- !u!4 &1240678493
 Transform:
   m_ObjectHideFlags: 0
@@ -2750,8 +2753,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -795, y: 29}
-  m_SizeDelta: {x: 240, y: 900}
+  m_AnchoredPosition: {x: -795, y: -4}
+  m_SizeDelta: {x: 275, y: 700}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2091240675
 MonoBehaviour:
