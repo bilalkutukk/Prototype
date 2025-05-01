@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.UI;
 public class CardZoneManager : MonoBehaviour
 {
 
@@ -7,6 +8,10 @@ public class CardZoneManager : MonoBehaviour
     public GameObject cardPrefab; // Prefab for the card display
     public Transform cardZoneRect; // UI container for the cards
     public DeckManager deckManager;
+
+    public Button takeButton; // Button to end turn
+    public Button sellButton; // Button to sell cards
+    public Button tradeButton; // Button to buy cards
 
     private float _spacing = 50f; // Space between cards
     private float _startX = 0f; // Starting position for the first card
