@@ -23,7 +23,8 @@ public class CardZoneManager : MonoBehaviour
         placeCards(); // Place the cards in the hand
     }
     public virtual void AddCard() {
-        cards.Add(deckManager.DrawCard());
+        CardData newCard = deckManager.DrawCard();
+        cards.Add(newCard);
         InstantiateCard(cards[cards.Count - 1]);
     }
     public virtual void RemoveCard(CardData card) {
@@ -49,23 +50,31 @@ public class CardZoneManager : MonoBehaviour
     }
 
     public virtual void placeCards() {
-        int i = 0;
-        foreach (Transform child in cardZoneRect) 
+
+        for (int i = 0; i < cards.Count; i++)
         {
-            RectTransform rt = child.GetComponent<RectTransform>();
-            cards[i].cardRect = rt; // Update the card's rect transform reference
-            rt.localScale = Vector3.one; // Reset scale to 1 IS IT N
-            rt.anchoredPosition = new Vector2(startX + (i++ *(spacing + cardSizeX)), 0);
+            RectTransform rt = cards[i].cardRect;
+            rt.localScale = Vector3.one;
+            rt.anchoredPosition = new Vector2(startX + (i *(spacing + cardSizeX)), 0);
+            Debug.Log($"Card is placed at x: {rt.anchoredPosition.x}");
         }
     }
 
     private void InstantiateCard(CardData card) {
         GameObject cardGO = Instantiate(cardPrefab, cardZoneRect);
+        card.instanceGO = cardGO;
+        
+        RectTransform rt = cardGO.GetComponent<RectTransform>();
+        card.cardRect = rt;
+
         CardDisplay display = cardGO.GetComponent<CardDisplay>();
         display.LoadCard(card);
     }
 
     public List<CardData> GetHand() {
         return new List<CardData>(cards);
-    }    
+    }
+    void Update()
+    {
+    } 
 }

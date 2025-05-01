@@ -16,7 +16,7 @@ public class DeckManager : MonoBehaviour
         {
             for (int j = 0; j < cardQuantities[i]; j++)
             {
-                deck.Add(allCardTypes[i]);
+                deck.Add(ScriptableObject.Instantiate(allCardTypes[i]));
             }
         }
         Shuffle(deck);

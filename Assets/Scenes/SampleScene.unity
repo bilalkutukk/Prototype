@@ -2172,7 +2172,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1702312541}
   - component: {fileID: 1702312542}
-  - component: {fileID: 1702312543}
   m_Layer: 0
   m_Name: PlayerManager
   m_TagString: Untagged
@@ -2210,19 +2209,6 @@ MonoBehaviour:
   cardPrefab: {fileID: 6308339549214156238, guid: c59d8d28e02019549b2890a2c2aec411, type: 3}
   cardZoneRect: {fileID: 714831144}
   deckManager: {fileID: 1185394258}
---- !u!114 &1702312543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1702312540}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -591303064, guid: a811bde74b26b53498b4f6d872b09b6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inspectorUpdater: 0
 --- !u!1 &1765556043
 GameObject:
   m_ObjectHideFlags: 0
@@ -2266,7 +2252,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1841632266}
   - component: {fileID: 1841632265}
-  - component: {fileID: 1841632267}
   m_Layer: 0
   m_Name: OpponentManager
   m_TagString: Untagged
@@ -2304,19 +2289,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1841632267
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1841632264}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -591303064, guid: a811bde74b26b53498b4f6d872b09b6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inspectorUpdater: 0
 --- !u!1 &1843069536
 GameObject:
   m_ObjectHideFlags: 0
@@ -2967,7 +2939,7 @@ SceneRoots:
   - {fileID: 1843069540}
   - {fileID: 1185394259}
   - {fileID: 115249801}
-  - {fileID: 1240678493}
   - {fileID: 1702312541}
   - {fileID: 1841632266}
+  - {fileID: 1240678493}
   - {fileID: 234241208}

@@ -8,4 +8,5 @@ public class CardData : ScriptableObject
     public int value;
 
     public RectTransform cardRect; // Reference to the card's transform in the UI
+    public GameObject instanceGO; // Reference to the card's transform in the UI
 }
